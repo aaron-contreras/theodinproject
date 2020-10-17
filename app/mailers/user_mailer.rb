@@ -4,12 +4,14 @@ class UserMailer < ActionMailer::Base
   def send_welcome_email_to(user)
     @user = user
     attachments.inline['logo.svg'] = logo_path
-
+    # Improve action mailer system
     mail(
       subject: 'Getting started with The Odin Project',
       to: user.email,
       template_name: 'welcome_email',
     )
+    require 'pry'
+    binding.pry
   end
 
   private

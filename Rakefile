@@ -5,3 +5,4 @@
 require File.expand_path('config/application', __dir__)
 # Fix merge conflicts
 Rails.application.load_tasks
+

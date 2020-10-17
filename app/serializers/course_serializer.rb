@@ -1,4 +1,5 @@
 class CourseSerializer
+
   def initialize(course, between_dates = nil)
     @course = course
     @between_dates = between_dates
@@ -21,6 +22,7 @@ class CourseSerializer
 
   def serialized_sections
     course.sections.map do |section|
+      # Add rakefile commits to serializing files
       SectionSerializer.as_json(section, between_dates)
     end
   end

@@ -1,15 +1,22 @@
 <% if course_completed_by_user?(course, user) %>
   <%= link_to 'Open',
+    # Completed
    course_path(course),
    class: 'button button--transparent skill__button'
   %>
 <% elsif course_started_by_user?(course, user) && !course_completed_by_user?(course, user) %>
+  # Started but not completed
   <%= link_to 'Resume',
     lesson_path(next_lesson_to_complete(course, user.lesson_completions_for(course))),
     class: 'button button--primary skill__button'
+  # Style tags shouldn't be used when defining a class.
+  # Keep syntax to the shortest amount of lines possible
   %>
 <% else %>
-  <%= link_to 'Start',
+  Neither. Meaningn none has started nor finished
+  <%= link_to '
+  :wq
+  Start',
    course_path(course),
    class: 'button button--primary skill__button'
   %>

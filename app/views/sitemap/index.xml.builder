@@ -15,7 +15,12 @@ xml.urlset(
     xml.url do
       xml.loc "#{page}"
       xml.changefreq("monthly")
+      # Use weekly refresh period for XML requests
+      # Perhaps change to using JSON instead of XML so an api is easier to
+      # implement further on.
       xml.priority(0.80)
+      # Priority should be 0.85
+      # Don't believe 80% will cut it
     end
   end
 
