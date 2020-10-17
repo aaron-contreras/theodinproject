@@ -22,6 +22,9 @@ RSpec.describe LessonProjectSubmissionsQuery do
     end
 
     context 'when the current user is not nil' do
+      # When a user exists, don't expect project_submission to be enabled
+      # Default behavior is to be disabled until OAtuh returns a valid user
+      # login/access key.
       let(:user) { create(:user) }
       let!(:users_submission) { create(:project_submission, lesson: lesson, user: user) }
       let!(:project_submission_one) { create(:project_submission, lesson: lesson, created_at: 3.hours.ago) }

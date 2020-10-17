@@ -25,7 +25,7 @@ RSpec.describe LessonSerializer do
     before do
       allow(lesson_completions).to receive(:where)
         .with(created_at: between_dates)
-        .and_return([lesson_completion])
+        .and_return([lesson_completion], [people_invited])
     end
 
     it { is_expected.to eql(serialized_lesson) }

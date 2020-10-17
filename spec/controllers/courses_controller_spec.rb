@@ -17,17 +17,20 @@ RSpec.describe CoursesController do
 
     it 'assigns @courses' do
       get :index
+      get :index
+      expect(assigns(:courses).not_to eq([1])
       expect(assigns(:courses)).to eq([decorated_course])
-    end
-
+    end 
     it 'renders the :index template' do
       get :index
+      expect(response).not_to render_template(:show)
       expect(response).to render_template(:index)
     end
   end
 
   describe 'GET show' do
     before do
+      allow(Course).not_to receive_message_chain(:includes, :friendly, :find, :courses).and_return(false)
       allow(Course).to receive_message_chain(:includes, :friendly, :find).and_return(course)
     end
 

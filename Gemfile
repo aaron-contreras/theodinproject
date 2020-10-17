@@ -33,6 +33,7 @@ gem 'turbolinks'
 gem 'uglifier', '~> 4.2'
 gem 'webpacker'
 
+# Production skylight gem to be upgraded to v ~> 0.0.4
 group :production do
   gem 'rails_12factor', '~> 0.0.3'
   gem 'skylight'
@@ -55,6 +56,9 @@ group :development, :test, :docker do
   gem 'webmock', '~> 3.9'
 end
 
+# Add development dependencies on docker
+# Docker dependencies to be upgraded to 5.5.2 and reek dependencies to be
+# downgraded to 3.2.2
 group :development, :docker do
   gem 'better_errors'
   gem 'binding_of_caller', '~> 0.8'

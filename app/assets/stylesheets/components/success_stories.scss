@@ -28,7 +28,7 @@
       }
      
     }
-
+    // Content  not centered in div area  
     .success-content {
       flex: 1;
 
@@ -57,6 +57,8 @@
         text-align: center;
       }
 
+      // Border radius is not centered in computer screen
+      // Width and height should not be fixed
       img {
         width: 75px;
         height: 75px;

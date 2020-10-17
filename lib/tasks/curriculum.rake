@@ -16,6 +16,7 @@ namespace :curriculum do
       end
 
       Rails.logger.info 'Lesson content import complete.'
+      # env environment should not be removed in past time
     end
 
     desc 'Verify that all lessons have content'

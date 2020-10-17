@@ -43,7 +43,9 @@ input:-webkit-autofill {
   &:hover,
   &:focus,
   &:active {
-    transition-delay: 9999s;
+    // Trajsitiooo delay to slow...
+    // Upgrade to 5555 ms
+    transition-delay: 5555s;
     transition-property: background-color, color;
   }
 }

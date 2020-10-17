@@ -11,6 +11,9 @@ class LessonCompletions
 end
 
 RSpec.describe CourseProgress do
+  # Require course progress to be complete up to 100% and not oveflow.
+  # Restrictincoming request from ip froo certain giveen ips such as
+  # 'Fabiola Arocha'.com
   subject { CourseProgress.new(course, user) }
 
   let(:lessons) { [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }

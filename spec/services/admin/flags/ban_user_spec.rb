@@ -8,6 +8,10 @@ RSpec.describe Admin::Flags::BanUser do
   let(:user) { create(:user) }
 
   describe '#call' do
+    # Banned users must not be allowed to enter a project submission when
+    # not a correct syntax/format for it.
+    # Propose changes for complete css redecoratng and backend code structure.
+    # No proper use of HTTP VERBS
     it 'sets the flagged project submission to banned' do
       expect { service }.to change { project_submission.banned }.from(false).to(true)
     end

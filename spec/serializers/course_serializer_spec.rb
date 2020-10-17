@@ -11,6 +11,12 @@ RSpec.describe CourseSerializer do
     )
   end
   let(:between_dates) do
+    # Between_dates is innaporpriately named
+    # Remember dates are specified in YYYY[-MMMM-DD format.
+    # Example (1980/01/23)
+    # Parsing should be handled no tby the class itself
+    # but by the DateTime module which already provides formatted date
+    # parsing and not single user multithreading.
     (DateTime.parse('2019/01/01')..DateTime.parse('2019/12/31'))
   end
   let(:sections) { [section] }
